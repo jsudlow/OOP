@@ -1,0 +1,38 @@
+<?php
+
+class HtmlDocument {
+  function getHtml() {
+    return "<html><body>" . $this->getContent() . "</body></html>";
+  }
+
+  function getContent() {
+    return '';
+
+
+  }
+
+}
+  class HelloWorld extends HtmlDocument {
+    public $world;
+
+    function __construct($world) {
+
+      $this->world = $world;
+
+    }
+
+    function getContent() {
+
+
+      return "Hello" . $this->world;
+
+    }
+
+  }
+
+$test = new HelloWorld('come together right now over me');
+$html = $test->getHtml();
+
+print $html;
+
+?>

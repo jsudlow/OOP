@@ -1,0 +1,60 @@
+<?php
+
+
+//we got ourselves a Document class. As we know about classes they are a blue print for the object. In PHP when we already have a document, how do we re use our already written code
+//and then branch off to continusly create easily modifiable and lossly coupled code
+class Document {
+  protected $title;
+  protected $text;
+
+  function __construct($title,$text) {
+
+    $this->title = $title;
+    $this->text = $text;
+  }
+
+  function print_title() {
+
+    echo $this->title;
+
+  }
+
+  function print_text() {
+
+    echo $this->text;
+
+  }
+
+}
+
+class NewsArticle extends Document {
+
+  private $introduction;
+
+  function __construct($title,$text,$introduction) {
+    parent::__construct($title,$text);
+    $this->introduction = $introduction;
+}
+
+  function print_intro() {
+    echo $this->introduction;
+  }
+
+  function print_all() {
+    $this->parent::print_title();
+    $this->print_text();  
+}
+}
+
+
+
+ 
+
+
+
+
+
+$test = new  NewsArticle("jons essay", "there was a pig named sally who lived in a hill.", "an introduction among men");
+$test->print_all();
+
+?>

@@ -1,0 +1,27 @@
+<?php
+
+class Painting {
+  private $_artist;
+
+  function __construct($name) {
+    $this->_artist=$name;
+  }
+
+  function __get($name) {
+    $method = 'get'.$name;
+    echo $method;
+    return $this->$method();
+  }
+
+  function getArtist() {
+    return $this->_artist;
+  }
+
+}
+
+
+$vangoe = new Painting('Vangoe');
+
+echo $vangoe->artist;
+
+?>

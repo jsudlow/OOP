@@ -1,0 +1,12 @@
+<?php
+
+getDB() {
+
+  if(!array_key_exists('DB_NAME', $_ENV)) die("DB_NAME IS NOT SET");
+
+
+}
+
+
+
+?>
